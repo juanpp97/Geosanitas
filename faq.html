@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="estilos/estilos.css">
+    <title>Conocenos</title>
+    <script src="https://kit.fontawesome.com/c9700cd3b7.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="shortcut icon" href="img/icono.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="bootstrap-5.3.0-alpha3-dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <header>
+        <nav class="contenedor">
+            <picture>
+                <a href="index.html"><img src="img/logo2.png" alt="Logo Geosanitas" id="logo"></a>
+            </picture>
+            <div class="hamburger__menu">
+                <span class="menu__icono"> Menu <img src="icono_menu.svg"> </span>
+                <ul class="menu">
+                    <li><a href="index.html" class = "inicio">Inicio</a></li>
+                    <li><a href="emergencias.html" class="emergencias">Emergencias</a></li>
+                    <li><a href="hospitales.html" class="hospitales">¿Dónde me atiendo?</a></li>
+                    <li><a href="faq.html" class="conocenos">Conocenos</a></li>
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+
+
+    <main class="contenedor">
+
+        <section>
+            <h5 style="text-align: center;">Acercanos tu consulta sobre nuestra web o dejanos tu sugerencia</h3>
+
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-6">
+                            <div>
+                                <label for="nombre" class="form-label">Nombre:</label>
+                                <input type="text" name="nombre" id="nombre" class="form-control"
+                                    placeholder="Tu nombre aquí...">
+                            </div>
+                            <div>
+                                <label for="apellido" class="form-label">Apellido:</label>
+                                <input type="text" name="apellido" id="apellido" class="form-control"
+                                    placeholder="Tu apellido aquí...">
+                            </div>
+                            <div>
+                                <label for="ciudad" class="form-label">Ciudad:</label>
+                                <input type="text" name="ciudad" id="ciudad" class="form-control"
+                                    placeholder="Contanos de que ciudad sos...">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div>
+                                <label for="ingreso_mail" class="form-label">Correo Electrónico:</label>
+                                <input type="email" class="form-control" id="ingreso_mail"
+                                    placeholder="ejemplo@dominio.com">
+                            </div>
+                            <div>
+                                <label for="comentario" class="form-label">Escribinos tu comentario acá:</label>
+                                <textarea class="form-control" id="comentario" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <input type="submit" value="Envianos tu consulta o sugerencia" class="btn btn-primary">
+                    </div>
+                </div>
+
+
+
+
+        </section>
+    </main>
+
+    <footer>
+        <p>Ante cualquier emergencia comunicarse al 107</p>
+        <div class="footer__redes">
+            También estamos en:
+            <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://twitter.com/?lang=es" target="_blank"><i class="fa-brands fa-square-twitter"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+
+        </div>
+        <div class="footer__copy">
+            <picture class="footer__copy__item">
+                <img src="img/logo2.png" alt="Logo Geosanitas" id="logo">
+            </picture>
+            <div class="footer__copy__item" id = "copyright">
+            </div>
+
+    </footer>
+
+    <script src="bootstrap-5.3.0-alpha3-dist/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
