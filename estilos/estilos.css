@@ -79,7 +79,7 @@ nav {
 
 .activo {
     border: 2px solid rgba(235, 235, 244, 0.5);
-}
+} 
 
 /* --------------- Inicio ---------------*/
 /* .mi_container {
@@ -133,7 +133,7 @@ nav {
     font-size: 1rem;
     padding: 0 .5rem;
 }
-.item {
+.item{
     display: flex;
     flex-direction: column;
     background-color: #000035;
@@ -195,8 +195,14 @@ nav {
     padding: .25rem 1.5rem;
 }
 .sub-item__link:hover{
-    text-decoration: underline;
+    animation: link_hover .7s linear 0s 1;
 }
+@keyframes link_hover {
+    0%   {border-top: none;}
+    25%  {border-right: none;}
+    50%  {border-bottom: none;}
+    75% {border-left: none}
+  }
 .sub-item:last-child {
     position: absolute;
     bottom: 0;
@@ -264,7 +270,11 @@ footer>p {
 
 
 
-@media screen and (max-width: 600px) {
+
+@media screen and (max-width: 599px) {
+    #logo{
+        height: 35px;
+    }
     .menu__icono{
         display:flex;
     }
@@ -278,6 +288,7 @@ footer>p {
         display: none;
         z-index: 100;
     }
+    
     .hamburger__menu:hover .menu{
         display: block;
     }
@@ -296,7 +307,7 @@ footer>p {
         padding: .75rem .5rem;
         border-radius: 0px;
         text-align: center;
-
+        transition: none;
     }
    
     .menu a:hover:not(.activo) {
@@ -304,35 +315,33 @@ footer>p {
         color: #000;
         border: none;
     }
-    .activo {
-        color: black;
-        border: none;
-        background-color: #759ba8;
-    }
-    .container_emergencias {
+    .container_emergencias, .contenedor {
         padding: .5rem 5vw;
     }
-
+    .footer__copy__item{
+        padding: .5rem 5vw;
+    }
     .footer__copy {
         justify-content: center;
     }
-
     .sub-item img {
         width: 100%;
         height: 150px;
         object-fit: cover;
         border-radius: 30px 30px 0 0;
         border-bottom: 2px solid rgba(170, 170, 170, 0.7);
-
     }
-
-    .item {
-        width: 200px;
+    .item{
+        width: 250px;
     }
-
+    .menu .activo{
+        color: black;
+        border: none;
+        background-color: #759ba8;
+    }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 600px) and (max-width: 768px) {
     #logo{
         height: 35px;
     }
@@ -346,11 +355,12 @@ footer>p {
         padding: .5rem 5vw;
     }
     .footer__copy{
-        justify-content: center;
+        justify-content: space-between;
     }
     .container-grid{
         column-gap: 4rem;
     }
+
 } 
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {

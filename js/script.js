@@ -17,18 +17,7 @@ copyright.textContent = `Copyright © ${year}. Todos los derechos reservados`;
 /* --------------- Inicio ---------------*/
 
 /* --------------- Emergencias ---------------*/
-const buscador = document.querySelector("#buscador");
-const titulo = document.querySelectorAll(".sub-item h3");
 
-
-buscador.addEventListener("keyup", () => {
-    console.log(buscador.value);
-    titulo.forEach((valor, i) => {
-        valor.textContent.toLowerCase().includes(buscador.value.toLowerCase()) 
-        ?  titulo[i].parentElement.parentElement.classList.remove("filtro")
-        : titulo[i].parentElement.parentElement.classList.add("filtro")
-    })
-});
 /* --------------- Hospitales ---------------*/
 // const uls = document.querySelectorAll("li a");
 
