@@ -1,4 +1,9 @@
 /* Estilos Generales */
+:root{
+   --traslacion: 0;
+   --transicion: all 1s ease;
+   --bkg-puntos: rgba(0, 65, 115,0.5);
+}
 html {
     scroll-behavior: smooth;
     box-sizing: border-box;
@@ -82,14 +87,14 @@ nav {
 } 
 
 /* --------------- Inicio ---------------*/
-.intro h3{
+.contenido h3{
     font-size: 1.3rem;
 }
-.intro p{
+.contenido p{
     font-size: 1rem;
-    padding: 0.5rem 0;
+    padding: 0.5rem 0 2rem;
 }
-.intro{
+.contenido{
     position: relative;
     text-align: justify;
     box-shadow: 0px 2px 10px rgba(154, 150, 170,0.2);
@@ -97,13 +102,13 @@ nav {
     padding: 1rem;
 }
 /*Estilos del carousel*/
-.c{
-    width: 1200px;
-    border: 2px solid black;
-    border-radius: 100px;
+.carousel-container{
+    max-width: 1000px;
+    margin: 1rem auto;
+
 }
 
-.carousel-container{
+.carousel{
     max-width: 900px;
     max-height: 500px;
     margin: 0 auto;
@@ -112,21 +117,23 @@ nav {
 
 
 }
-.carousel{
+.imgs-container{
     display: flex;
     width: 1000%;
     /* transform: translateX(calc(calc(-100%/10)*2.5)); */
     /* transition: all 1s ease; */
+    transform: translateX(var(--traslacion));
+    transition: var(--transicion);
 }
 
-.img-container{
+.content{
     position: relative;
     height: 100%;
     width: 100%;
     max-width: 900px;
 }
 
-.carousel img{
+.imgs-container img{
     width: 100%;
     max-width: 900px;
     max-height: 500px;
@@ -134,7 +141,7 @@ nav {
     aspect-ratio: 16/9;
 }
 
-.descripcion{
+.description{
     position: absolute;
     width: 100%;
     max-width: 900px;
@@ -148,21 +155,39 @@ nav {
     letter-spacing: 1px;
 }
 
-.img-container:hover .descripcion{
+.content:hover .description{
     opacity: 1;
 }
 
-.descripcion>h3, .descripcion>p{
+.description>h3, .description>p{
     padding: .15rem;
 }
-.descripcion a{
+.description a{
     text-decoration: none;
     color: #fff;
     transition: all 1s ease;
 }
-.descripcion a:hover{
+.description a:hover{
     text-decoration: underline;
     font-size: 1.35rem;
+}
+
+.puntos{
+    display: flex;
+    flex-flow: row nowrap;
+    list-style: none;
+    gap: 3rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.punto{
+    background-color: #003;
+    height: 17px;
+    width: 17px;
+    border-radius: 50%;
+}
+.li_activo{
+    background-color: var(--bkg-puntos);
 }
 /* --------------- Emergencias ---------------*/
 .container-grid {
@@ -356,6 +381,7 @@ footer>p {
     }
     .hamburger__menu{
         position: relative;
+        transition: all 1s ease-in-out;
     }
     .menu{
         position: absolute;
@@ -363,10 +389,13 @@ footer>p {
         right: 0;
         display: none;
         z-index: 100;
+        opacity:0;
+
     }
     
     .hamburger__menu:hover .menu{
         display: block;
+        opacity: 1;
     }
 
     .menu__icono{
@@ -423,6 +452,14 @@ footer>p {
         margin-right: 15vw;
         
     }
+    .puntos{
+        margin-top: 1rem;
+        gap:1.25rem;
+    }
+    .puntos li{
+        height: 10px;
+        width: 10px;
+    }
 }
 
 @media screen and (min-width: 600px) and (max-width: 768px) {
@@ -443,6 +480,10 @@ footer>p {
     }
     .container-grid{
         column-gap: 4rem;
+    }
+    .puntos li{
+        height: 13px;
+        width: 13px;
     }
 
 } 
