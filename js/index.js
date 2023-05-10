@@ -3,19 +3,21 @@ const carousel = document.querySelectorAll('.imgs-container');
 const puntos = document.querySelectorAll('.puntos li');
 /* ------- Slider automatico cada cierto tiempo ------- */
 let contador = 0;
-setInterval(() => {
+const slider_automatico = () => {
+    estilos.setProperty("--transicion", "all 1s ease")
     contador++;
+    if(contador === puntos.length){
+        contador=0;
+        estilos.setProperty("--transicion", "none")
+    }
     puntos.forEach(li => {
         li.classList.remove("li_activo");
     });
     const traslacion = -10*contador;
-        estilos.setProperty("--traslacion", traslacion + "%")
-        puntos[contador].classList.add("li_activo");
-        if(contador == puntos.length-1){
-            contador=-1;
-
-        }
-}, 30000)
+    estilos.setProperty("--traslacion", traslacion + "%");
+    puntos[contador].classList.add("li_activo");
+}
+let intervalo = setInterval(slider_automatico, 3000);
 
 /* ------- Slider manual con puntos ------- */
 puntos.forEach((li, indice) => {
@@ -27,6 +29,8 @@ puntos.forEach((li, indice) => {
         estilos.setProperty("--traslacion", traslacion + "%")
         li.classList.add("li_activo");
         contador = indice;
-    })
-})
+        clearInterval(intervalo);
+        intervalo = setInterval(slider_automatico, 3000);
+    });
+});
 
