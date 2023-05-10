@@ -1,6 +1,6 @@
 /* Estilos Generales */
 :root{
-   --traslacion: 0;
+   --traslacion: -0%;
    --transicion: all 1s ease;
    --bkg-puntos: rgba(0, 65, 115,0.5);
 }
@@ -119,17 +119,16 @@ nav {
 }
 .imgs-container{
     display: flex;
-    width: 1000%;
-    /* transform: translateX(calc(calc(-100%/10)*2.5)); */
-    /* transition: all 1s ease; */
-    transform: translateX(var(--traslacion));
-    transition: var(--transicion);
+    width: 1500%;
+ 
 }
 
 .content{
     position: relative;
     height: 100%;
     width: 100%;
+    transform: translateX(var(--traslacion));
+    transition: var(--transicion);
     max-width: 900px;
 }
 
@@ -306,7 +305,87 @@ nav {
 }
 
 /* --------------- Hospitales ---------------*/
+.container-hospitales {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 100%;
+}
+  
+.sidebar{
+    background-color: #f2f2f2;
+    z-index: 100;
+    width: 30%;
+    text-align: center;
+}
+.sidebar h3{
+    border-bottom: 1px solid #ccc;
+    background-color: #f2f2f2;
+    color: #000035;
+    padding: .2rem 1rem;
+}
+.sidebar ul{
+    list-style: none;
+}
+  
+.sidebar li a {
+    text-decoration: none;
+    display: block;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #ccc;
+    color: #004173;
 
+}
+  
+.sidebar li:last-child a{
+    border-bottom: none;
+}
+  
+.sidebar a:hover {
+    background-color: #333;
+    color: #fff;
+}
+.sidebar a {
+    transition: all .3s ease;
+}
+.sidebar a:hover {
+    background-color: #333;
+    color: #fff;
+}
+.hospital{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+.hospital div:not(.imagen){
+    padding: 2rem;
+}
+.titulo{
+    box-sizing: border-box;
+    font-size: 1.4rem;
+    width: 100%;
+    padding: 1.25rem 1.5rem;
+    letter-spacing: 1px;
+    background-color: rgb(0, 0, 53,0.7);
+    color: #EEE;
+    text-align: center;
+
+}
+.imagen{
+    position: relative;
+    width: 100%;
+}
+.hospital img{
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+
+
+
+  
 
 /* --------------- Conocenos ---------------*/
 
@@ -314,7 +393,7 @@ nav {
 
 /* --------------- Footer ---------------*/
 footer {
-    margin-top: 2em;
+
     background-color: #759ba8;
     color: #004173;
     display: flex;
@@ -454,11 +533,17 @@ footer>p {
     }
     .puntos{
         margin-top: 1rem;
-        gap:1.25rem;
+        gap:1rem;
     }
     .puntos li{
-        height: 10px;
-        width: 10px;
+        height: 8px;
+        width: 8px;
+    }
+    .sidebar{
+        width: 50%;
+    }
+    .titulo{
+        font-size: 1.2rem;  
     }
 }
 
@@ -481,11 +566,17 @@ footer>p {
     .container-grid{
         column-gap: 4rem;
     }
+    .puntos{
+        margin-top: 1rem;
+        gap:2rem;
+    }
     .puntos li{
         height: 13px;
         width: 13px;
     }
-
+    .sidebar{
+        width: 50%;
+    }
 } 
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {

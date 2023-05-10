@@ -1,8 +1,9 @@
 const estilos = document.documentElement.style;
-const carousel = document.querySelectorAll('.imgs-container');
+const carousel = document.querySelectorAll('.content');
 const puntos = document.querySelectorAll('.puntos li');
 /* ------- Slider automatico cada cierto tiempo ------- */
 let contador = 0;
+
 const slider_automatico = () => {
     estilos.setProperty("--transicion", "all 1s ease")
     contador++;
@@ -13,7 +14,9 @@ const slider_automatico = () => {
     puntos.forEach(li => {
         li.classList.remove("li_activo");
     });
-    const traslacion = -10*contador;
+
+    const traslacion = -100*contador;
+    console.log(traslacion)
     estilos.setProperty("--traslacion", traslacion + "%");
     puntos[contador].classList.add("li_activo");
 }
@@ -25,7 +28,7 @@ puntos.forEach((li, indice) => {
         puntos.forEach(li => {
             li.classList.remove("li_activo");
         })
-        const traslacion = -10*indice;
+        const traslacion = -100*indice;
         estilos.setProperty("--traslacion", traslacion + "%")
         li.classList.add("li_activo");
         contador = indice;
