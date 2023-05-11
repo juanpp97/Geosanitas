@@ -52,13 +52,14 @@ hospitales = [universitario, clinicas, hmu, trinidad,
             allende_c, allende_nc, italiano, fabiola,
             parque, rawson, infantil, maternidad,
             misericordia, roque, instituto];
+
 /* Selecciono los elementos HTML a modificar */
 const titulo = document.querySelector(".titulo");
 const imagen = document.querySelector(".imagen img")
 const info = document.querySelectorAll(".info span");
 const mapa = document.querySelector(".ubicacion iframe");
 /* Selecciono los elementos de la lista */
-const links = document.querySelectorAll(".sidebar a");
+const links = document.querySelectorAll(".sidebar ul a");
 const seccion = document.querySelector(".hospital")
 
 links.forEach((link, indice) => {
