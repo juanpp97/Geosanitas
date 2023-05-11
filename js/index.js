@@ -37,9 +37,9 @@ puntos.forEach((li, indice) => {
     });
 });
 /* Manejo del hover de la descripcion del slider para que funcione en dispositivos moviles */
-imagenes.forEach((img, i) => {
+carousel.forEach((contenido, i) => {
     /* Cuando se presione en la imagen cambia su opacidad dependiendo de su valor actual */
-    img.addEventListener("mousedown", (e) => {
+    contenido.addEventListener("mousedown", (e) => {
         e.preventDefault();
         const estilo = window.getComputedStyle(descripcion[i]);
         console.log(estilo.getPropertyValue('opacity'))
@@ -50,10 +50,10 @@ imagenes.forEach((img, i) => {
     })
     /* Hago que el evento hover se haga desde JS para evitar conflictos con los estilos en linea definidos por JS */
 
-    img.addEventListener("mouseover", () => {
+    contenido.addEventListener("mouseover", () => {
         descripcion[i].style.opacity = '1';
     });
-    img.addEventListener("mouseout", () => {
+    contenido.addEventListener("mouseout", () => {
         descripcion[i].style.opacity = '0';
     });
 })
