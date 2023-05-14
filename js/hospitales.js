@@ -65,6 +65,9 @@ const home = document.querySelector(".home");
 const seccion_inicial = document.querySelector(".inicial");
 const menu_acordeon = document.querySelector(".list");
 const lista = document.querySelector(".menu_hospitales");
+
+
+
 menu_acordeon.addEventListener("click", () => {
     lista.classList.toggle("acordeon");
     if(lista.classList.contains("acordeon")){
