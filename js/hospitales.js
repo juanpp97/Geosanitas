@@ -54,28 +54,60 @@ hospitales = [universitario, clinicas, hmu, trinidad,
             misericordia, roque, instituto];
 
 /* Selecciono los elementos HTML a modificar */
+const estilos = document.documentElement.style;
 const titulo = document.querySelector(".titulo");
 const imagen = document.querySelector(".imagen img")
 const info = document.querySelectorAll(".info span");
 const mapa = document.querySelector(".ubicacion iframe");
-/* Selecciono los elementos de la lista */
-const links = document.querySelectorAll(".sidebar ul a");
-const seccion = document.querySelector(".hospital")
+const links = document.querySelectorAll(".menu_hospitales a");
+const seccion_hospital = document.querySelector(".hospital")
+const home = document.querySelector(".home");
+const seccion_inicial = document.querySelector(".inicial");
+const menu_acordeon = document.querySelector(".list");
+const lista = document.querySelector(".menu_hospitales");
+menu_acordeon.addEventListener("click", () => {
+    lista.classList.toggle("acordeon");
+    if(lista.classList.contains("acordeon")){
+        estilos.setProperty("--disp-cards", "none");
+        estilos.setProperty("--disp-container", "flex");
+    }else{
+        setTimeout(()=> {
+            estilos.setProperty("--disp-cards", "grid");
+            estilos.setProperty("--disp-container", "block");
+            seccion_hospital.classList.add("hidden");
+            seccion_inicial.classList.remove("hidden");
+        },1000)
+        
+    }
+});
+
 
 links.forEach((link, indice) => {
     link.addEventListener("click",(e) => {
+        /*Evito la actualización de la pagina*/
         e.preventDefault();
+        /*Hago que te lleve arriba de la pagina*/
         window.scrollTo({top: 0,behavior: "smooth"});
-        seccion.classList.remove("hidden")
+        /*Le saco la clase hidden a la seccion de hospital*/
+        seccion_hospital.classList.remove("hidden");
+        seccion_inicial.classList.add("hidden");
+
+        /*Verifico que el titulo objeto de ese indice del array coincida con la clase para asegurar que se trate del mismo hospital*/
         if(hospitales[indice].titulo.toLowerCase().includes(link.className)){
+            /*Si cumple llamo al metodo para modificar los elementos*/
             hospitales[indice].modificar(titulo, imagen, info, mapa);
         }else{
-            hospitales.filter(hospital => {hospital.titulo.toLowerCase().includes(link.className)}).modificar(titulo, imagen, info, mapa);
+            /* Si no lo encuentra filtra el array a los elementos que coincidan y usa el metodo */    
+            hospitales.filter(hospital => {return (hospital.titulo.toLowerCase().includes(link.className))})[0].modificar(titulo, imagen, info, mapa);
         }
 
     })
 })
+home.addEventListener("click", () => {
+    seccion_hospital.classList.add("hidden");
+    seccion_inicial.classList.remove("hidden");
 
+})
 
 
 
