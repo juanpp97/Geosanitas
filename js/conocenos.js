@@ -173,12 +173,12 @@ async function envio(event) {
             mensaje.innerHTML = "El formulario ha sido enviado correctamente. Gracias por contactarte con nosotros!";
             cambiarFondo(false);
             temporizacion();
-
-            form.reset()
+            form.reset();
+            contador.innerHTML = maxLength
         } else {
             response.json().then(data => {
                 if (Object.hasOwn(data, 'errors')) {
-                    mensaje.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                    mensaje.innerHTML = data["errors"].map(error => error["message"]).join(", ");
                     cambiarFondo(true);
 
                 } else {
