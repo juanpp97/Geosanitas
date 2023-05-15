@@ -1,3 +1,4 @@
+let isInTransition = false;
 const getHospitales = async () => {
     try {
 
@@ -21,6 +22,7 @@ const getHospitales = async () => {
                 
                 cambiarHospital(hospital, event){
                     event.preventDefault();
+                    if(isInTransition) return
                     this.$refs.link.forEach(element => {
                         element.removeAttribute("id");
                     });
@@ -45,12 +47,14 @@ const getHospitales = async () => {
                 });
             },
             acordeon(){
+                if(isInTransition) return;
                 const estilos = document.documentElement.style;
-
+                isInTransition = true;
                 this.$refs.menu.classList.toggle("acordeon");
                 if(this.$refs.menu.classList.contains("acordeon")){
                     estilos.setProperty("--disp-cards", "none");
                     estilos.setProperty("--disp-container", "flex");
+                    setTimeout(() => {isInTransition = false;}, 1000);
                 }else{
                     setTimeout(()=> {
                         estilos.setProperty("--disp-cards", "grid");
@@ -60,6 +64,7 @@ const getHospitales = async () => {
                         this.$refs.link.forEach(element => {
                             element.removeAttribute("id");
                         });
+                        isInTransition = false;
                     },1000)
                     
                 }

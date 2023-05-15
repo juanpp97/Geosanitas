@@ -5,6 +5,8 @@
     --bkg-puntos: rgba(0, 65, 115, 0.5);
     --disp-cards: grid;
     --disp-container: block;
+    --fondo-msg: rgb(0, 255, 0, 0.2);
+    --color-msg: #004173;
 }
 
 html {
@@ -38,7 +40,7 @@ header {
     font-family: 'Roboto Condensed', sans-serif;
 }
 
-#logo {
+#logo, #logo_c {
     height: 50px;
 }
 
@@ -594,8 +596,20 @@ nav {
 
 /* --------------- Conocenos ---------------*/
 
-
-
+#mensaje{
+    width:100%;
+    background-color: var(--fondo-msg);
+    color: var(--color-msg);
+    padding: 1rem;
+    border-radius:15px;
+    transition: opacity 1s ease;
+}
+#error_form{
+    border: 2px solid rgb(255,0,0,0.5);
+}
+#error_form:focus{
+    box-shadow: 2px 2px 3px 2px rgb(255,0,0,0.2);
+}
 /* --------------- Footer ---------------*/
 footer {
     position: relative;
@@ -666,7 +680,11 @@ footer>p {
         height: 35px;
         padding: 1rem 0;
     }
-
+    #logo_c {
+        height: 50px;
+        padding: 1rem 0;
+    }
+    
     .menu__icono {
         display: flex;
     }
@@ -842,7 +860,7 @@ footer>p {
 }
 
 @media screen and (min-width: 600px) and (max-width: 768px) {
-    #logo {
+    #logo, #logo_c {
         height: 35px;
     }
 
@@ -1017,7 +1035,7 @@ footer>p {
 
     }
 
-    #logo {
+    #logo, #logo_c {
         height: 80px;
     }
 
