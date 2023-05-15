@@ -24,6 +24,8 @@ const getHospitales = async () => {
                     this.$refs.link.forEach(element => {
                         element.removeAttribute("id");
                     });
+                    window.scrollTo({top: 0,behavior: "smooth"});
+
                     event.target.id ="hospital-activo";    
       
                     this.titulo = hospital.titulo;
