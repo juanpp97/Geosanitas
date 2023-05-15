@@ -34,6 +34,8 @@
         </nav>
     </header>
     <main id="main">
+
+        
         <div class="container-hospitales">
             <aside class="sidebar">
                 <div class="list">
@@ -41,27 +43,13 @@
                 </div>
 
                 <ul class="menu_hospitales">
-                    <li><a href="#" class="universitario">Hospital Privado Universitario de Córdoba</a></li>
-                    <li><a href="#" class="clínicas">Hospital Nacional de Clínicas. Facultad de Ciencias Médicas</a>
-                    </li>
-                    <li><a href="#" class="urgencias">Hospital Municipal de Urgencias (H.M.U.)</a></li>
-                    <li><a href="#" class="trinidad">Hospital de Niños de la Santísima Trinidad</a></li>
-                    <li><a href="#" class="cerro">Sanatorio Allende Cerro</a></li>
-                    <li><a href="#" class="nueva">Sanatorio Allende Nueva Córdoba</a></li>
-                    <li><a href="#" class="italiano">Hospital Italiano de Córdoba</a></li>
-                    <li><a href="#" class="fabiola">Clínica Universitaria Reina Fabiola (C.U.R.F.)</a></li>
-                    <li><a href="#" class="parque">Sanatorio Parque</a></li>
-                    <li><a href="#" class="rawson">Hospital Rawson</a></li>
-                    <li><a href="#" class="infantil">Hospital Municipal Infantil</a></li>
-                    <li><a href="#" class="maternidad">Hospital Universitario de Maternidad y Neonatología
-                            (H.U.M.N.)</a></li>
-                    <li><a href="#" class="misericordia">Hospital Nuestra Señora de la Misericordia</a></li>
-                    <li><a href="#" class="roque">Hospital San Roque</a></li>
-                    <li><a href="#" class="instituto">Instituto Modelo de Cardiología Privado</a></li>
-                  
+                    <li v-for="hospital in hospitales" v-on:click ="cambiarHospital(hospital, $event)"><a href="#" ref="link">{{hospital.titulo}}</a></li>
+                    
                 </ul>
             </aside>
-            <section class="inicial">
+
+
+            <section class="inicial" ref="inicial">
                 <div class="card-container">
                     <div class="card">
                         <div class="front">
@@ -161,20 +149,20 @@
             </section>
 
 
-            <section class="hospital hidden">
-                <h3 class="titulo">Hospital Privado Universitario de Córdoba</h3>
+            <section class="hospital hidden" ref="hospital">
+                <h3 class="titulo">{{titulo}}</h3>
                 <div class="imagen">
-                    <img src="img/universitario.jpg" alt="Hospital Privado Universitario de Córdoba">
+                    <img :src="scr" :alt="titulo">
                 </div>
                 <div class="info">
-                    <p><b>Dependencia:</b> <span>Privado</span> </p>
+                    <p><b>Dependencia:</b> {{dependencia}} </p>
 
-                    <p><b>Teléfono:</b> <span>0351 468-8200</span> </p>
-                    <p> <b>Direccion: </b><span>Naciones Unidas 346, X5016 Córdoba</span></p>
+                    <p><b>Teléfono:</b> {{telefono}} </p>
+                    <p> <b>Direccion: </b>{{direccion}}</p>
                 </div>
                 <div class="ubicacion">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3403.9822245366313!2d-64.1976449!3d-31.4421563!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a25925957c33%3A0xcbc974304cd4e547!2sHospital%20Privado%20Universitario%20de%20C%C3%B3rdoba!5e0!3m2!1ses-419!2sar!4v1683729465111!5m2!1ses-419!2sar"
+                        :src="ubicacion"
                         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </section>
@@ -199,6 +187,7 @@
         </div>
 
     </footer>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="js/script.js"></script>
     <script src="js/hospitales.js"></script>
 

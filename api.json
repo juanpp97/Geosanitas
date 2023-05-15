@@ -1,0 +1,122 @@
+[
+    {
+        "titulo": "Hospital Privado Universitario de Córdoba",
+        "scr": "img/universitario.jpg",
+        "dependencia": "Privado",
+        "telefono": "0351 468-8200",
+        "direccion": "Naciones Unidas 346, Córdoba.",
+        "ubicacion": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13615.902773520049!2d-64.1991651!3d-31.4423361!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a25925957c33%3A0xcbc974304cd4e547!2sHospital%20Privado%20Universitario%20de%20C%C3%B3rdoba!5e0!3m2!1ses-419!2sar!4v1683505791051!5m2!1ses-419!2sar"
+    },
+    {
+        "titulo": "Hospital Nacional de Clínicas. Facultad de Ciencias Médicas",
+        "scr": "img/clinicas.jpg",
+        "dependencia": "Público",
+        "telefono": "0351 535-3970",
+        "direccion": "Santa Rosa 1564, Córdoba.",
+        "ubicacion": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13621.118512963842!2d-64.2032683!3d-31.406421!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432988f7a23a61f%3A0x87e3ddf84f214a81!2sHospital%20Nacional%20de%20Cl%C3%ADnicas%20(H.N.C.)%20%7C%20F.C.M.!5e0!3m2!1ses-419!2sar!4v1683506509406!5m2!1ses-419!2sar"
+    },
+    {
+        "titulo": "Hospital Municipal de Urgencias (H.M.U.)",
+        "scr": "img/urgencias.jpeg",
+        "dependencia": "Público",
+        "telefono": "0351 427-6200",
+        "direccion": "Catamarca 441, Córdoba.",
+        "ubicacion": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13620.18803306411!2d-64.1759371!3d-31.4128309!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a29e677b495f%3A0x884abe7170ec0f43!2sHospital%20Municipal%20de%20Urgencias%20(H.M.U.)!5e0!3m2!1ses-419!2sar!4v1683506988259!5m2!1ses-419!2sar"
+    },
+    {
+        "titulo": "Hospital de Niños de la Santísima Trinidad",
+        "scr": "img/trinidad.jpg",
+        "dependencia": "Público",
+        "telefono": "0351 458-6405",
+        "direccion": "Bajada Pucará 787, Córdoba.",
+        "ubicacion": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13618.051940152704!2d-64.1690823!3d-31.4275416!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a2bf01d5e717%3A0xcbfc443ee7101b76!2sHospital%20de%20Ni%C3%B1os%20de%20la%20Sant%C3%ADsima%20Trinidad!5e0!3m2!1ses-419!2sar!4v1683507675923!5m2!1ses-419!2sar"
+    },
+    {
+        "titulo": "Sanatorio Allende Cerro",
+        "scr": "img/allende_c.png",
+        "dependencia": "Privado",
+        "telefono": "0810-555-2553",
+        "direccion": "Av. Pedro Simón Laplace 5749, Córdoba.",
+        "ubicacion": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13628.131357339267!2d-64.2426454!3d-31.358073!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432994b2b79e21f%3A0x6808539eb7ef66e6!2sSanatorio%20Allende%20Cerro!5e0!3m2!1ses-419!2sar!4v1683508028066!5m2!1ses-419!2sar"
+    },
+    {
+        "titulo": "Sanatorio Allende Nueva Córdoba",
+        "scr": "img/Allende_nc.jpg",
+        "dependencia": "Privado",
+        "telefono": "0810-555-2553",
+        "direccion": "Obispo Oro 42, Córdoba.",
+        "ubicacion": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13618.45748450981!2d-64.1868341!3d-31.4247492!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a28f0b4ed949%3A0xea316ec20c2a59cf!2sSanatorio%20Allende%20Nueva%20C%C3%B3rdoba!5e0!3m2!1ses-419!2sar!4v1683508198354!5m2!1ses-419!2sar"
+    },
+    {
+        "titulo": "Hospital Italiano de Córdoba",
+        "scr": "img/italiano.jpg",
+        "dependencia": "Privado",
+        "telefono": "0351 410-6500",
+        "direccion": "Roma 550, Córdoba.",
+        "ubicacion": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13620.68867766535!2d-64.1646236!3d-31.4093822!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a2a748fda107%3A0x3712c6f5a0906d37!2sHospital%20Italiano%20(H.I.)%20%E2%80%93%20Sociedad%20de%20Beneficencia%20%5BSede%20Central%5D%20%7C%20Sociedad%20de%20Beneficencia%20Hospital%20Italiano!5e0!3m2!1ses-419!2sar!4v1683508354327!5m2!1ses-419!2sar"
+    },
+    {
+        "titulo": "Clínica Universitaria Reina Fabiola (C.U.R.F.)",
+        "scr": "img/fabiola.jpg",
+        "dependencia": "Privado",
+        "telefono": "0351 414-2121",
+        "direccion": "Oncativo 1248, Córdoba.",
+        "ubicacion": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13620.61698168495!2d-64.1680823!3d-31.4098761!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a2a088ccda2d%3A0xfd191c1ea84b3929!2sCl%C3%ADnica%20Universitaria%20Reina%20Fabiola%20(C.U.R.F.)%20%E2%80%93%20Fundaci%C3%B3n%20para%20el%20Progreso%20de%20la%20Universidad%20Cat%C3%B3lica%20de%20C%C3%B3rdoba!5e0!3m2!1ses-419!2sar!4v1683508692723!5m2!1ses-419!2sar"
+    },
+    {
+        "titulo": "Sanatorio Parque",
+        "scr": "img/parque.jpg",
+        "dependencia": "Privado",
+        "telefono": "0351 456-4000",
+        "direccion": "San Jerónimo 3115, Córdoba.",
+        "ubicacion": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13618.643152148867!2d-64.1439673!3d-31.4234707!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432bd4a680495f3%3A0xb5cea49d08d5399e!2sSanatorio%20Parque!5e0!3m2!1ses-419!2sar!4v1683508799767!5m2!1ses-419!2sar"
+    },
+    {
+        "titulo": "Hospital Rawson",
+        "scr": "img/rawson2.jpeg",
+        "dependencia": "Provincial",
+        "telefono": "0351 434-8756",
+        "direccion": "Bajada Pucará 2025, Córdoba",
+        "ubicacion": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13617.85301930798!2d-64.1695104!3d-31.4289112!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a2bfa1daff77%3A0x7c333b6f78632d!2sHospital%20Rawson!5e0!3m2!1ses-419!2sar!4v1683509097734!5m2!1ses-419!2sar"
+    },
+    {
+        "titulo": "Hospital Municipal Infantil",
+        "scr": "img/municipal_infantil.png",
+        "dependencia": "Público",
+        "telefono": "0351 474-9253",
+        "direccion": "Luis de Góngora 550-598, Córdoba.",
+        "ubicacion": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13624.90579520956!2d-64.1819589!3d-31.380319!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x943298455dd969bd%3A0x3ff06309ac9b1992!2sHospital%20Infantil%20%7C%20Municipalidad%20de%20C%C3%B3rdoba!5e0!3m2!1ses-419!2sar!4v1683765171148!5m2!1ses-419!2sar"
+    },
+    {
+        "titulo": "Hospital Universitario de Maternidad y Neonatología (H.U.M.N.)",
+        "scr": "img/humn.png",
+        "dependencia": "Público",
+        "telefono": "0351 535-3980",
+        "direccion": "Rodríguez Peña 285, Córdoba.",
+        "ubicacion": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13620.768937059025!2d-64.1964661!3d-31.4088293!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x943298873f185fb5%3A0x2f238b1a974b44b2!2sHospital%20Universitario%20de%20Maternidad%20y%20Neonatolog%C3%ADa%20(H.U.M.N.)%20%7C%20F.C.M.!5e0!3m2!1ses-419!2sar!4v1683765292245!5m2!1ses-419!2sar"
+    },
+    {
+        "titulo": "Hospital Nuestra Señora de la Misericordia",
+        "scr": "img/misericordia.png",
+        "dependencia": "Público",
+        "telefono": "0351 434-4107",
+        "direccion": "Belgrano 1502, Córdoba.",
+        "ubicacion": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13617.242817098138!2d-64.1967845!3d-31.4331122!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a261ba27210d%3A0x75f08833c2350576!2sHospital%20Misericordia!5e0!3m2!1ses-419!2sar!4v1683765458492!5m2!1ses-419!2sar"
+    },
+    {
+        "titulo": "Hospital San Roque",
+        "scr": "img/sanroque.png",
+        "dependencia": "Público",
+        "telefono": "0351 553-8600",
+        "direccion": "Bajada Pucará 1900, Córdoba.",
+        "ubicacion": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13617.949604948162!2d-64.1698154!3d-31.4282462!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a2bfb6e70841%3A0xfca8de29bb239a8e!2sNuevo%20Hospital%20San%20Roque!5e0!3m2!1ses-419!2sar!4v1683765525965!5m2!1ses-419!2sar"
+    },
+    {
+        "titulo": "Instituto Modelo de Cardiología Privado",
+        "scr": "img/imc.png",
+        "dependencia": "Privado",
+        "telefono": "0351 485-8585",
+        "direccion": "Av. Sagrada Familia 359, Córdoba.",
+        "ubicacion": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13622.664556604164!2d-64.235731!3d-31.395768!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x943298cec623aea7%3A0xb36b6fb24903d335!2sInstituto%20Modelo%20de%20Cardiolog%C3%ADa!5e0!3m2!1ses-419!2sar!4v1683765629693!5m2!1ses-419!2sar"
+    }
+]

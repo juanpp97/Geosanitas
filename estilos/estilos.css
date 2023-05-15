@@ -504,11 +504,14 @@ nav {
     border-bottom: none;
 }
 
-.menu_hospitales a:hover {
+.menu_hospitales a:hover:not(#hospital-activo) {
     background-color: #333;
     color: #fff;
 }
-
+#hospital-activo{
+    color: #fff;
+    background-color: #000035;
+}
 .menu_hospitales a {
     transition: all .3s ease;
 }
