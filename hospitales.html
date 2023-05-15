@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ref="root">
 
 <head>
     <meta charset="UTF-8">
@@ -38,11 +38,11 @@
         
         <div class="container-hospitales">
             <aside class="sidebar">
-                <div class="list">
-                    <h3>Listado de hospitales principales</h3><img src="icono_home.svg" class="home">
+                <div class="list" v-on:click ="acordeon()">
+                    <h3>Listado de hospitales principales</h3><img src="icono_home.svg" class="home" v-on:click ="home()">
                 </div>
 
-                <ul class="menu_hospitales">
+                <ul class="menu_hospitales" ref="menu">
                     <li v-for="hospital in hospitales" v-on:click ="cambiarHospital(hospital, $event)"><a href="#" ref="link">{{hospital.titulo}}</a></li>
                     
                 </ul>

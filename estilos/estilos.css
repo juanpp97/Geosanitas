@@ -464,6 +464,7 @@ nav {
     background-color: #f2f2f2;
     width: 100%;
     border-bottom: 1px solid #ccc;
+
 }
 
 .home {
@@ -472,6 +473,7 @@ nav {
     height: 22px;
     padding: 0 2px;
     transition: all .5s ease-out;
+    cursor: pointer;
 }
 
 .home:hover {
