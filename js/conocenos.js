@@ -6,7 +6,14 @@ const correo = document.querySelector('#correo');
 const comentario = document.querySelector('#comentario');
 const mensaje = document.querySelector('#mensaje');
 const estilos = document.documentElement.style;
-let inError = false;
+const contador = document.querySelector(".word-counter")
+console.log(contador)
+/* Defino numero máximo de palabras del comentario */
+const maxLength = 2000;
+comentario.maxLength = maxLength;
+contador.innerHTML = maxLength
+let temp;
+
 const cambiarFondo = (error) => {
     if (error) {
         estilos.setProperty("--fondo-msg", "rgb(255, 0, 0, 0.2)");
@@ -24,12 +31,45 @@ const cambiarFondo = (error) => {
 }
 
 const inputError = (error, atributo) => {
-    error 
-    ? atributo.setAttribute("id", "error_form")
-    : atributo.removeAttribute("id", "error_form");
+    error
+        ? atributo.setAttribute("id", "error_form")
+        : atributo.removeAttribute("id", "error_form");
 }
 
-function envio(event) {
+const temporizacion = () => {
+    temp = setTimeout(() => {
+        mensaje.style.opacity = 0;
+        temp = setTimeout(() => {
+            mensaje.style.display = "none";
+        }, 700);
+    }, 3000);
+}
+const contieneLetras = (valorInput) => {
+    for (let i = 0; i < valorInput.length; i++) {
+        /* Verifico que solo sean letras */
+        const charCode = valorInput.charCodeAt(i);
+        if (!((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122) || charCode === 241 || charCode === 209 || charCode === 32)) {
+            return false;
+        }
+    }
+    return true;
+}
+comentario.addEventListener("input", () => {
+    contador.innerHTML = maxLength - comentario.value.length;
+    if (comentario.value.length > maxLength) {
+        inputError(true, comentario);
+        contador.style.color = "#f00";
+        contador.innerHTML = "0";
+        mensaje.innerHTML = "<b>Error:</b>Se superó el número de caracteres del comentario";
+        cambiarFondo(true);
+    } else {
+        inputError(false, comentario);
+        contador.style.color = "#aaa";
+        mensaje.style.display = "none";
+    }
+});
+
+async function envio(event) {
     event.preventDefault();
     let valorNombre = nombre.value;
     let valorApellido = apellido.value;
@@ -44,34 +84,122 @@ function envio(event) {
         inputError(valorCiudad === "", ciudad);
         inputError(valorCorreo === "", correo);
         inputError(valorComentario === "", comentario);
-        mensaje.innerHTML = "<b>Error:</b>Todos los campos son obligatorios";
+        mensaje.innerHTML = "<b>Error:</b>Complete todos los campos antes de enviar";
         cambiarFondo(true);
-        temp = setTimeout(() => {
-            mensaje.style.opacity = 0;
-            temp = setTimeout(() => {
-                mensaje.style.display = "none";
-            }, 700);
-        }, 3000);
+        clearTimeout(temp);
+        temporizacion();
         return;
     }
+    inputError(valorNombre === "", nombre);
+    inputError(valorApellido === "", apellido);
+    inputError(valorCiudad === "", ciudad);
+    inputError(valorCorreo === "", correo);
+    inputError(valorComentario === "", comentario);
+
     /* Validación del nombre */
-    for (let i = 0; i < valorNombre.length; i++) {
-        /* Verifico que solo sean letras */
-        const charCode = valorNombre.charCodeAt(i);
-        if (!((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122))) {
+    if (!contieneLetras(valorNombre)) {
+
+        clearTimeout(temp);
+        mensaje.innerHTML = "<b>Error:</b>El Nombre solo puede contener letras";
+        cambiarFondo(true);
+        inputError(true, nombre);
+        temporizacion();
+        return;
+    }
+
+    inputError(false, nombre);
+
+    /* Validación de apellido */
+    if (!contieneLetras(valorApellido)) {
+        clearTimeout(temp);
+        mensaje.innerHTML = "<b>Error:</b>El Apellido solo puede contener letras";
+        cambiarFondo(true);
+        inputError(true, apellido);
+        temporizacion();
+        return;
+    }
+    inputError(false, apellido);
+
+    if (!contieneLetras(valorCiudad)) {
+        clearTimeout(temp);
+        mensaje.innerHTML = "<b>Error:</b> La Ciudad solo puede contener letras";
+        cambiarFondo(true);
+        inputError(true, ciudad);
+        temporizacion();
+        return;
+    }
+
+    inputError(false, ciudad);
+
+    if (!(valorCorreo.includes("@"))) {
+        clearTimeout(temp);
+        mensaje.innerHTML = "<b>Error:</b> El correo debe contener el caracter @";
+        cambiarFondo(true);
+        inputError(true, correo);
+        temporizacion();
+        return;
+    } else {
+        let correo = valorCorreo.split("@");
+
+        if (correo[0].includes("(") || correo[0].includes(")") || correo[0].includes("<") || correo[0].includes(">") || correo[0].includes(",") || correo[0].includes(";") || correo[0].includes(":") || correo[0].includes("[") || correo[0].includes("]") || correo[0].includes("{") || correo[0].includes("}") || correo[0].includes("%") || correo[0].includes("&") || !(correo[1].includes("."))) {
             clearTimeout(temp);
-            mensaje.innerHTML = "<b>Error:</b> El nombre solo puede contener letras";
+            mensaje.innerHTML = "<b>Error:</b> El correo contiene caracteres no validos";
             cambiarFondo(true);
-            nombre.setAttribute("id", "error_form")
-            temp = setTimeout(() => {
-                mensaje.style.opacity = 0;
-                temp = setTimeout(() => {
-                    mensaje.style.display = "none";
-                }, 700);
-            }, 3000);
+            inputError(true, correo);
+            temporizacion();
             return;
         }
     }
+    inputError(false, correo);
+    if (valorComentario.length > maxLength) {
+        clearTimeout(temp);
+        mensaje.innerHTML = "<b>Error:</b> El comentario excede el número máximo de caracteres";
+        cambiarFondo(true);
+        inputError(true, comentario);
+        temporizacion();
+        return;
+    }
+    inputError(false, comentario);
+
+    let datosForm = new FormData(this);
+    fetch(this.action, {
+        method: this.method,
+        body: datosForm,
+        headers: {
+            'Accept': 'application/json'
+        }
+    }).then(response => {
+        if (response.ok) {
+            mensaje.innerHTML = "El formulario ha sido enviado correctamente. Gracias por contactarte con nosotros!";
+            cambiarFondo(false);
+            temporizacion();
+
+            form.reset()
+        } else {
+            response.json().then(data => {
+                if (Object.hasOwn(data, 'errors')) {
+                    mensaje.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                    cambiarFondo(true);
+
+                } else {
+                    mensaje.innerHTML = "<b>Error:</b> Ha habido un error en el envio del formulario";
+                    cambiarFondo(true);
+                }
+            })
+        }
+    }).catch(error => {
+        mensaje.innerHTML = "<b>Error:</b> Ha habido un error en el envio del formulario";
+    });
+
+
+
 }
+
+
+
+
+
+
+
 
 form.addEventListener("submit", envio)

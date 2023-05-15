@@ -41,7 +41,8 @@
         <section>
             <h5 class="mt-3">Dejanos tu consulta o sugerencia sobre nuestra web </h3>
        
-                <form id="form">
+                <form id="form" action="https://formspree.io/f/xjvdzoqo"
+                method="POST">
                     <div class="container mt-4">
                         <div class="row" id="mensaje" style="display: none;">
                             El campo debe ser completado
@@ -71,9 +72,11 @@
                                     <input type="email" class="form-control" id="correo"
                                         placeholder="ejemplo@dominio.com">
                                 </div>
-                                <div class="mt-3">
+                                <div class="mt-3" id ="form_comentario">
                                     <label for="comentario" class="form-label">Escribinos tu comentario aqui:</label>
-                                    <textarea class="form-control" id="comentario" rows="5"></textarea>
+                                    <textarea class="form-control" id="comentario" rows="4" placeholder="Escriba su comentario o sugerencia aquí..."></textarea>
+                                    <p class="word-counter">2000</p>
+
                                 </div>
                             </div>
                         </div>

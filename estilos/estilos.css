@@ -610,6 +610,20 @@ nav {
 #error_form:focus{
     box-shadow: 2px 2px 3px 2px rgb(255,0,0,0.2);
 }
+#form_comentario{
+    position: relative;
+}
+#comentario{
+    padding-bottom: 2rem;
+    padding-right: 3rem;
+    text-align: justify;
+}
+.word-counter{
+    position: absolute; 
+    bottom: -18px; 
+    right: 1.2rem; 
+    color: #AAA;
+}
 /* --------------- Footer ---------------*/
 footer {
     position: relative;
@@ -855,6 +869,12 @@ footer>p {
     .card img {
         height: 80%;
         width: 115%;
+    }
+    .word-counter{
+        position: absolute; 
+        bottom: -13px; 
+        right: 1.2rem; 
+        color: #AAA;
     }
 
 }
