@@ -1,11 +1,11 @@
 const estilos = document.documentElement.style;
 const carousel = document.querySelectorAll('.content');
+const container = document.querySelector('.carousel');
 const imagenes = document.querySelectorAll('.content img')
 const puntos = document.querySelectorAll('.puntos li');
 const descripcion = document.querySelectorAll('.description')
 /* ------- Slider automatico cada cierto tiempo ------- */
 let contador = 0;
-
 const slider_automatico = () => {
     estilos.setProperty("--transicion", "all 1s ease")
     contador++;
@@ -19,6 +19,7 @@ const slider_automatico = () => {
     const traslacion = -100 * contador;
     estilos.setProperty("--traslacion", traslacion + "%");
     puntos[contador].classList.add("li_activo");
+
 }
 let intervalo = setInterval(slider_automatico, 3000);
 
@@ -38,11 +39,11 @@ puntos.forEach((li, indice) => {
 });
 /* Manejo del hover de la descripcion del slider para que funcione en dispositivos moviles */
 carousel.forEach((contenido, i) => {
+
     /* Cuando se presione en la imagen cambia su opacidad dependiendo de su valor actual */
     contenido.addEventListener("mousedown", (e) => {
         e.preventDefault();
         const estilo = window.getComputedStyle(descripcion[i]);
-        console.log(estilo.getPropertyValue('opacity'))
 
         Number(estilo.getPropertyValue('opacity')) > 0.5
             ? descripcion[i].style.opacity = '0'
@@ -57,3 +58,5 @@ carousel.forEach((contenido, i) => {
         descripcion[i].style.opacity = '0';
     });
 })
+
+

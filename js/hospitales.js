@@ -6,7 +6,6 @@ const getHospitales = async () => {
         const hospitalesJson = await hospitales.json();
         const { createApp } = Vue
         createApp({
-            
             data() {
                 return {
                     hospitales: hospitalesJson,
@@ -19,17 +18,17 @@ const getHospitales = async () => {
                 }
             },
             methods: {
-                
-                cambiarHospital(hospital, event){
+
+                cambiarHospital(hospital, event) {
                     event.preventDefault();
-                    if(isInTransition) return
+                    if (isInTransition) return
                     this.$refs.link.forEach(element => {
                         element.removeAttribute("id");
                     });
-                    window.scrollTo({top: 0,behavior: "smooth"});
+                    window.scrollTo({ top: 0, behavior: "smooth" });
 
-                    event.target.id ="hospital-activo";    
-      
+                    event.target.id = "hospital-activo";
+
                     this.titulo = hospital.titulo;
                     this.scr = hospital.scr;
                     this.dependencia = hospital.dependencia;
@@ -38,39 +37,39 @@ const getHospitales = async () => {
                     this.ubicacion = hospital.ubicacion;
                     this.$refs.hospital.classList.remove("hidden");
                     this.$refs.inicial.classList.add("hidden");
-            },
-            home(){
-                this.$refs.hospital.classList.add("hidden");
-                this.$refs.inicial.classList.remove("hidden");
-                this.$refs.link.forEach(element => {
-                    element.removeAttribute("id");
-                });
-            },
-            acordeon(){
-                if(isInTransition) return;
-                const estilos = document.documentElement.style;
-                isInTransition = true;
-                this.$refs.menu.classList.toggle("acordeon");
-                if(this.$refs.menu.classList.contains("acordeon")){
-                    estilos.setProperty("--disp-cards", "none");
-                    estilos.setProperty("--disp-container", "flex");
-                    setTimeout(() => {isInTransition = false;}, 1000);
-                }else{
-                    setTimeout(()=> {
-                        estilos.setProperty("--disp-cards", "grid");
-                        estilos.setProperty("--disp-container", "block");
-                        this.$refs.hospital.classList.add("hidden");
-                        this.$refs.inicial.classList.remove("hidden");
-                        this.$refs.link.forEach(element => {
-                            element.removeAttribute("id");
-                        });
-                        isInTransition = false;
-                    },1000)
-                    
+                },
+                home() {
+                    this.$refs.hospital.classList.add("hidden");
+                    this.$refs.inicial.classList.remove("hidden");
+                    this.$refs.link.forEach(element => {
+                        element.removeAttribute("id");
+                    });
+                },
+                acordeon() {
+                    if (isInTransition) return;
+                    const estilos = document.documentElement.style;
+                    isInTransition = true;
+                    this.$refs.menu.classList.toggle("acordeon");
+                    if (this.$refs.menu.classList.contains("acordeon")) {
+                        estilos.setProperty("--disp-cards", "none");
+                        estilos.setProperty("--disp-container", "flex");
+                        setTimeout(() => { isInTransition = false; }, 1000);
+                    } else {
+                        setTimeout(() => {
+                            estilos.setProperty("--disp-cards", "grid");
+                            estilos.setProperty("--disp-container", "block");
+                            this.$refs.hospital.classList.add("hidden");
+                            this.$refs.inicial.classList.remove("hidden");
+                            this.$refs.link.forEach(element => {
+                                element.removeAttribute("id");
+                            });
+                            isInTransition = false;
+                        }, 1000)
+
+                    }
                 }
             }
-            }
-            
+
         }).mount(".container-hospitales")
 
     } catch (error) { console.log("Hubo un error", error) }

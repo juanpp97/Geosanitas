@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -19,10 +19,10 @@
     <header>
         <nav class="padding">
             <picture>
-                <a href="index.html"><img src="img/logo2.png" alt="Logo Geosanitas" id="logo"></a>
+                <a href="index.html"><img src="img/logo.png" alt="Logo Geosanitas" class="logo"></a>
             </picture>
             <div class="hamburger__menu">
-                <span class="menu__icono"> Menu <img src="icono_menu.svg"> </span>
+                <span class="menu__icono"> Menu <img src="icono_menu.svg" alt="icono del menu"> </span>
                 <ul class="menu">
                     <li><a href="index.html" class="inicio">Inicio</a></li>
                     <li><a href="emergencias.html" class="emergencias">Emergencias</a></li>
@@ -35,16 +35,18 @@
     </header>
     <main id="main">
 
-        
+
         <div class="container-hospitales">
             <aside class="sidebar">
-                <div class="list" v-on:click ="acordeon()">
-                    <h3>Listado de hospitales principales</h3><img src="icono_home.svg" class="home" v-on:click ="home()">
+                <div class="list" v-on:click="acordeon()">
+                    <h3>Listado de hospitales principales</h3><img src="icono_home.svg" class="home"
+                        v-on:click="home()" alt="icono home">
                 </div>
 
                 <ul class="menu_hospitales" ref="menu">
-                    <li v-for="hospital in hospitales" v-on:click ="cambiarHospital(hospital, $event)"><a href="#" ref="link">{{hospital.titulo}}</a></li>
-                    
+                    <li v-for="hospital in hospitales" v-on:click="cambiarHospital(hospital, $event)"><a href="#"
+                            ref="link">{{hospital.titulo}}</a></li>
+
                 </ul>
             </aside>
 
@@ -68,8 +70,9 @@
                             </ul>
                             <div class="link">
 
-                            <a href="https://ministeriodesalud.cba.gov.ar/hospitales-y-centros-de-salud/"  target="_blank">Más
-                                información</a>
+                                <a href="https://ministeriodesalud.cba.gov.ar/hospitales-y-centros-de-salud/"
+                                    target="_blank">Más
+                                    información</a>
                             </div>
                         </div>
                     </div>
@@ -92,9 +95,10 @@
                             </p>
                             <div class="link">
 
-                            <a href="https://www.desuso.apross.gov.ar/17-Hospital-Raul-Angel-Ferreyra.note.html" target="_blank"> Más
-                                información</a>
-                                </div>
+                                <a href="https://www.desuso.apross.gov.ar/17-Hospital-Raul-Angel-Ferreyra.note.html"
+                                    target="_blank"> Más
+                                    información</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -115,7 +119,7 @@
                                 <li>Hospital Universitario de Maternidad y Neonatología</li>
                             </ul>
                             <div class="link">
-                            <a href="https://fcm.unc.edu.ar/hospitales/" target="_blank">Más información</a>
+                                <a href="https://fcm.unc.edu.ar/hospitales/" target="_blank">Más información</a>
                             </div>
                         </div>
                     </div>
@@ -137,12 +141,13 @@
                                 <li>Hospital Italiano </li>
                                 <li>Clínica
                                     Vélez Sárfield</li>
-                
+
                             </ul>
                             <div class="link">
-                                <a href="https://soldepiedra.com.ar/listado-de-clinicas-y-sanatorios-de-cordoba-capital/" target="_blank">Más información</a>
+                                <a href="https://soldepiedra.com.ar/listado-de-clinicas-y-sanatorios-de-cordoba-capital/"
+                                    target="_blank">Más información</a>
                             </div>
-                   
+
                         </div>
                     </div>
                 </div>
@@ -161,9 +166,8 @@
                     <p> <b>Direccion: </b>{{direccion}}</p>
                 </div>
                 <div class="ubicacion">
-                    <iframe
-                        :src="ubicacion"
-                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe :src="ubicacion" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </section>
         </div>
@@ -180,7 +184,7 @@
         </div>
         <div class="footer__copy padding">
             <picture class="footer__copy__item padding">
-                <img src="img/logo2.png" alt="Logo Geosanitas" id="logo">
+                <img src="img/logo.png" alt="Logo Geosanitas" class="logo">
             </picture>
             <div class="footer__copy__item padding" id="copyright">
             </div>

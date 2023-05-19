@@ -46,7 +46,7 @@ const temporizacion = () => {
 }
 const contieneLetras = (valorInput) => {
     for (let i = 0; i < valorInput.length; i++) {
-        /* Verifico que solo sean letras */
+        /* Verifico que solo sean letras (incluyo ñ y espacio) */
         const charCode = valorInput.charCodeAt(i);
         if (!((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122) || charCode === 241 || charCode === 209 || charCode === 32)) {
             return false;
@@ -55,6 +55,7 @@ const contieneLetras = (valorInput) => {
     return true;
 }
 comentario.addEventListener("input", () => {
+    /* Si se excede del número máximo de caracteres lo indica en pantalla */
     contador.innerHTML = maxLength - comentario.value.length;
     if (comentario.value.length > maxLength) {
         inputError(true, comentario);
@@ -98,7 +99,6 @@ async function envio(event) {
 
     /* Validación del nombre */
     if (!contieneLetras(valorNombre)) {
-
         clearTimeout(temp);
         mensaje.innerHTML = "<b>Error:</b>El Nombre solo puede contener letras";
         cambiarFondo(true);
@@ -120,6 +120,7 @@ async function envio(event) {
     }
     inputError(false, apellido);
 
+    /* Validación de la ciudad */
     if (!contieneLetras(valorCiudad)) {
         clearTimeout(temp);
         mensaje.innerHTML = "<b>Error:</b> La Ciudad solo puede contener letras";
@@ -131,6 +132,7 @@ async function envio(event) {
 
     inputError(false, ciudad);
 
+    /* Validación del correo */
     if (!(valorCorreo.includes("@"))) {
         clearTimeout(temp);
         mensaje.innerHTML = "<b>Error:</b> El correo debe contener el caracter @";
@@ -140,7 +142,7 @@ async function envio(event) {
         return;
     } else {
         let correo = valorCorreo.split("@");
-
+        /* Verifico que el correo no contenga caracteres invalidos */
         if (correo[0].includes("(") || correo[0].includes(")") || correo[0].includes("<") || correo[0].includes(">") || correo[0].includes(",") || correo[0].includes(";") || correo[0].includes(":") || correo[0].includes("[") || correo[0].includes("]") || correo[0].includes("{") || correo[0].includes("}") || correo[0].includes("%") || correo[0].includes("&") || !(correo[1].includes("."))) {
             clearTimeout(temp);
             mensaje.innerHTML = "<b>Error:</b> El correo contiene caracteres no validos";
@@ -151,6 +153,8 @@ async function envio(event) {
         }
     }
     inputError(false, correo);
+
+    /* Verifico que el comentario no exceda el número máximo de caracteres */
     if (valorComentario.length > maxLength) {
         clearTimeout(temp);
         mensaje.innerHTML = "<b>Error:</b> El comentario excede el número máximo de caracteres";
