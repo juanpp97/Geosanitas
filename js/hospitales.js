@@ -2,7 +2,7 @@ let isInTransition = false;
 const getHospitales = async () => {
     try {
 
-        const hospitales = await fetch(`https://mocki.io/v1/809194dd-b320-41f1-b2df-8f6bb61ade40`);
+        const hospitales = await fetch(`${window.location.origin}/api.json`);
         const hospitalesJson = await hospitales.json();
         const { createApp } = Vue
         createApp({

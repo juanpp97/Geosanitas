@@ -199,11 +199,4 @@ async function envio(event) {
 
 }
 
-
-
-
-
-
-
-
 form.addEventListener("submit", envio)
